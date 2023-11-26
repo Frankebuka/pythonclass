@@ -21,7 +21,10 @@ while True:  # Start an outer loop for starting another app
         elif option == "4":
             num1 = int(input("\n\tEnter first number: "))
             num2 = int(input("\tEnter second number: "))
-            print("\n\tQuotient of",num1,"and",num2,"is",int(num1/num2))
+            result = num1 / num2  # Perform the division
+            if result.is_integer():  # If the result is a whole number
+                result = int(result)  # Convert it to an integer
+            print("\n\tQuotient of",num1,"and",num2,"is",result)
         elif option == "5":
             print("\n\tThank you for using the calculator app. Goodbye!")
             exit()  # End the program
