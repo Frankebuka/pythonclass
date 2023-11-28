@@ -1,10 +1,14 @@
-numbers = []
+def calculate_mode(numbers):
+    max_count = 0
+    mode = numbers[0]
 
-for _ in range(4):
-    num = int(input("Enter a number: "))  
-    numbers.insert(0, num)  
+    for num in numbers:
+        num_count = numbers.count(num)
+        if num_count > max_count:
+            max_count = num_count
+            mode = num
 
-average = sum(numbers) / len(numbers)
+    return mode
 
-print("Sorted list:", numbers)
-print("Average:", average)
+numbers = [1, 2, 3, 2, 4, 3, 2, 3, 4, 2, 5]
+print("Mode:", calculate_mode(numbers))
